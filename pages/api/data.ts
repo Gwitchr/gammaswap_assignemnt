@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }));
       res.json({ klines, key: process.env.BIN_KEY !== undefined && process.env.BIN_KEY?.length });
     } catch (error) {
-      res.json(error);
+      res.json({ error, key: process.env.BIN_KEY !== undefined && process.env.BIN_KEY?.length });
     }
   }
 }

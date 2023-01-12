@@ -25,7 +25,7 @@ in no particular order
 - All is written in typescript 
 - Typings I realise are rough and minimal versions, maybe some duplication could be avoided 
 - Didn't leverage next ssr features, I believe it's ssr by default but I'd have to double check 
-- I didn't connect to an api to generate the candle chart cause I remembered that a while ago I connected to binance and a websocket might be needed, not too fresh in my mind, although I could check it 
+- It is connected to the binance api, and it refreshes every 10000 seconds 
 - That definetely could have been got around by using a revalidation time and swr of tanstack query library. Websockets aren't that great. 
 - So the chart data is mostly static 
 - In terms of the elements most are custom versions of flowbits the tailwind components library 

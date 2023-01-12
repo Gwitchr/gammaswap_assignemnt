@@ -4,17 +4,10 @@ import dynamic from "next/dynamic";
 import { Container, Card, Col, Button } from "components/atoms";
 import { Input, Range } from "components/atoms/forms";
 import { Dropdown } from "components/molecules";
-const CandleChart = dynamic(
-  () => import("components/organisms/CandleChart.ui"),
-  { ssr: false }
-);
+const CandleChart = dynamic(() => import("components/organisms/CandleChart.ui"), { ssr: false });
 import data from "constants/chart_data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMoneyBillWave,
-  faCloudRain,
-  faSackDollar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMoneyBillWave, faCloudRain, faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import { currencyFormat } from "utils/currency";
 import useSWR from "swr";
 import { fetcher } from "utils/fetcher";
@@ -86,16 +79,10 @@ export default function App() {
       </Head>
 
       <main>
-        <Container
-          fluid
-          className=" bg-gradient-to-br from-slate-300 to-blue-700 min-h-screen"
-        >
+        <Container fluid className=" bg-gradient-to-br from-slate-300 to-blue-700 min-h-screen">
           <Container className=" grid grid-cols-12 gap-2 text-slate-200">
             <Col className="col-span-12 md:col-span-4 space-y-2">
-              <Card
-                small
-                className="flex justify-start space-x-2 items-center relative z-10"
-              >
+              <Card small className="flex justify-start space-x-2 items-center relative z-10">
                 <Dropdown buttonContent={"Position"} closeOnClick>
                   <ul
                     className="py-1 text-sm text-gray-700 dark:text-gray-200"
@@ -134,11 +121,7 @@ export default function App() {
                     icon={faSackDollar}
                     labelClassName="capitalize"
                   />
-                  <Range
-                    label="Leverage"
-                    id="leverage"
-                    controller={[leverage, setLeverage]}
-                  />
+                  <Range label="Leverage" id="leverage" controller={[leverage, setLeverage]} />
                   <div className="w-full bg-gray-900/30 my-6 rounded-sm space-y-4 p-4 divide-y divide-gray-100">
                     <div className="flex  justify-between items-end">
                       <h5 className="text-sm font-bold">Leverage</h5>
@@ -159,21 +142,12 @@ export default function App() {
                     </div>
                     <div className="flex  justify-between items-end">
                       <h5 className="text-sm font-bold">Total</h5>
-                      <p className="">
-                        {currencyFormat.format(+pay + +positionVal)}
-                      </p>
+                      <p className="">{currencyFormat.format(+pay + +positionVal)}</p>
                     </div>
                   </div>
-                  <Button
-                    className="w-full mt-4 flex justify-center"
-                    type="submit"
-                  >
+                  <Button className="w-full mt-4 flex justify-center" type="submit">
                     Let it rain{" "}
-                    <FontAwesomeIcon
-                      className="w-4 ml-2"
-                      size="sm"
-                      icon={faCloudRain}
-                    />
+                    <FontAwesomeIcon className="w-4 ml-2" size="sm" icon={faCloudRain} />
                   </Button>
                 </form>
               </Card>
@@ -198,7 +172,9 @@ export default function App() {
               </Card>
               <Card small className="h-72 relative">
                 <CandleChart
-                  data={!error && !isLoading ? serverData.klines : data}
+                  data={
+                    !error && !isLoading && serverData?.klines.length ? serverData?.klines : data
+                  }
                 />
               </Card>
             </Col>

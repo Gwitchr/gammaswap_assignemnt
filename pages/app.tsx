@@ -52,7 +52,7 @@ export default function App() {
 
   const collateralAmount = currencyFormat.format(+pay * collateralRate);
   const borrowFee = currencyFormat.format(+pay * feeRate);
-  const pnl = currencyFormat.format(+pay + +positionVal * (1 / +leverage));
+  const pnl = currencyFormat.format(+pay + +positionVal * +leverage);
 
   const handlePositionVal = (val: number | string) => {
     setPositionVal(val);

@@ -32,6 +32,23 @@ in no particular order
 - tailwind is what I used to style the whole thing, if you spot it closely you start to see patterns emerging, specially related to how the design sort of has the same elements, but it's my visual education pulling harder than anything else 
 - I would probably re write the logic, although I think in general terms it works pretty perfomantly and is aligned with the current state of "the react way of doing stuff" 
 
+### Running it locally 
+- If you want to connect to the Binance API locally you need an .env with a public key assigned to BIN_KEY at the root level
+
+you can start the project with 
+```shell
+npm i 
+npm run dev 
+```
+or 
+```shell 
+yarn install 
+yarn dev
+```
+
+then if it gets mounted on port 3000 then you go to `http://localhost:3000/app`
+
+
 
 ## Deployed version 
 

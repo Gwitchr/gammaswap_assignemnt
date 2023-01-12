@@ -1,9 +1,5 @@
 import { useEffect, useRef } from "react";
-import {
-  createChart,
-  CrosshairMode,
-  CandlestickData,
-} from "lightweight-charts";
+import { createChart, CrosshairMode, CandlestickData } from "lightweight-charts";
 
 function ChartComponent({ data }: { data: CandlestickData[] }) {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
@@ -12,8 +8,7 @@ function ChartComponent({ data }: { data: CandlestickData[] }) {
       const handleResize = () => {
         chart.applyOptions({ width: chartContainerRef?.current?.clientWidth });
       };
-      const { width = 300, height = 200 } =
-        chartContainerRef.current.getBoundingClientRect();
+      const { width = 300, height = 200 } = chartContainerRef.current.getBoundingClientRect();
       const chart = createChart(chartContainerRef.current, {
         width,
         height,
@@ -47,7 +42,6 @@ function ChartComponent({ data }: { data: CandlestickData[] }) {
         wickDownColor: "rgba(255, 144, 0, 1)",
         wickUpColor: "rgba(255, 144, 0, 1)",
       });
-
       candleSeries.setData(data);
       window.addEventListener("resize", handleResize);
       return () => {

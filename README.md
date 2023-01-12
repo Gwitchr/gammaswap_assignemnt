@@ -26,8 +26,7 @@ in no particular order
 - Typings I realise are rough and minimal versions, maybe some duplication could be avoided 
 - Didn't leverage next ssr features, I believe it's ssr by default but I'd have to double check 
 - It is connected to the binance api, and it refreshes every 10000 seconds 
-- That definetely could have been got around by using a revalidation time and swr of tanstack query library. Websockets aren't that great. 
-- So the chart data is mostly static 
+- Last time I connected something like this was using sockets. Websockets aren't that great. 
 - In terms of the elements most are custom versions of flowbits the tailwind components library 
 - tailwind is what I used to style the whole thing, if you spot it closely you start to see patterns emerging, specially related to how the design sort of has the same elements, but it's my visual education pulling harder than anything else 
 - I would probably re write the logic, although I think in general terms it works pretty perfomantly and is aligned with the current state of "the react way of doing stuff" 

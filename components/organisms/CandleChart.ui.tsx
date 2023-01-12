@@ -14,6 +14,7 @@ function ChartComponent({ data }: { data: CandlestickData[] }) {
       };
       const { width = 300, height = 200 } =
         chartContainerRef.current.getBoundingClientRect();
+      console.log({ width, height }, ` ⚠️`);
       const chart = createChart(chartContainerRef.current, {
         width,
         height,

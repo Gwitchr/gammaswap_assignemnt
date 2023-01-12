@@ -15,7 +15,7 @@ import {
   faCloudRain,
   faSackDollar,
 } from "@fortawesome/free-solid-svg-icons";
-import { currencyFormat, numberFormat } from "utils/currency";
+import { currencyFormat } from "utils/currency";
 
 const positions = [
   {
@@ -129,26 +129,26 @@ export default function App() {
                     id="leverage"
                     controller={[leverage, setLeverage]}
                   />
-                  <div className="w-full bg-gray-900/30 my-6 rounded-sm space-y-2 p-2 divide-y divide-gray-100">
-                    <div className="flex  justify-between items-start">
-                      <h5 className="text-sm">Leverage</h5>
+                  <div className="w-full bg-gray-900/30 my-6 rounded-sm space-y-4 p-4 divide-y divide-gray-100">
+                    <div className="flex  justify-between items-end">
+                      <h5 className="text-sm font-bold">Leverage</h5>
                       <p className="">{leverage}</p>
                     </div>
 
-                    <div className="flex  justify-between items-start">
-                      <h5 className="text-sm">PnL</h5>
+                    <div className="flex  justify-between items-end">
+                      <h5 className="text-sm font-bold">PnL</h5>
                       <p className="">{pnl}</p>
                     </div>
-                    <div className="flex  justify-between items-start">
-                      <h5 className="text-sm">Borrow fee</h5>
+                    <div className="flex  justify-between items-end">
+                      <h5 className="text-sm font-bold">Borrow fee</h5>
                       <p className="">{borrowFee}</p>
                     </div>
-                    <div className="flex  justify-between items-start">
-                      <h5 className="text-sm">Collateral</h5>
+                    <div className="flex  justify-between items-end">
+                      <h5 className="text-sm font-bold">Collateral</h5>
                       <p className="">{collateralAmount}</p>
                     </div>
-                    <div className="flex  justify-between items-start">
-                      <h5 className="text-sm">Total</h5>
+                    <div className="flex  justify-between items-end">
+                      <h5 className="text-sm font-bold">Total</h5>
                       <p className="">
                         {currencyFormat.format(+pay + +positionVal)}
                       </p>
@@ -168,7 +168,7 @@ export default function App() {
                 </form>
               </Card>
             </Col>
-            <Col className="col-span-12 md:col-span-8 space-y-2">
+            <Col className="col-span-12 md:col-span-8 space-y-4">
               <Card small className="flex justify-start space-x-4">
                 <div className="flex flex-col justify-center items-start">
                   <h3 className="font-bold text-lg">ETH/USD</h3>

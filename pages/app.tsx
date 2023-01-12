@@ -16,6 +16,8 @@ import {
   faSackDollar,
 } from "@fortawesome/free-solid-svg-icons";
 import { currencyFormat } from "utils/currency";
+import useSWR from "swr";
+import { fetcher } from "utils/fetcher";
 
 const positions = [
   {
@@ -42,6 +44,14 @@ const collateralRate = 0.95;
 const feeRate = 0.05;
 
 export default function App() {
+  const {
+    data: serverData,
+    error,
+    isLoading,
+  } = useSWR("/api/data", fetcher, {
+    refreshInterval: 10000,
+  });
+
   const [selPos, setSelPos] = useState(positions[0].label);
   const [pay, setPay] = useState<number | string>(0);
   const [positionVal, setPositionVal] = useState<number | string>(0);
@@ -187,7 +197,9 @@ export default function App() {
                 </div>
               </Card>
               <Card small className="h-72 relative">
-                <CandleChart data={data} />
+                <CandleChart
+                  data={!error && !isLoading ? serverData.klines : data}
+                />
               </Card>
             </Col>
           </Container>

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Challenge 
 
-## Getting Started
+## XD Prototype 
 
-First, run the development server:
+Comments: 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+in no particular order
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- I realise that I express a lot better when it comes to tuning the final version than the prototype, I feel short of states and other elements
+- This is more of a raw draft just to understand elements and weights and make sure that that the structure, colors in general work 
+- I saw a lot of prototypes and mockups for crypto traders and almost all of them are dark theme based 
+- Compared to banks and other institutions I went for a ligher tone and transparente cards to transmit well transpraency 
+- Changed the order of the elements compared to other examples cause is my opinion that for ltr reading most important elements come first and in my case it was easily the money I'm investing, risk and other operations 
+- I didn't have a ton of time to conduct research or maybe try a second option to validate a design thinking journey, but this would serve a starting point
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<img width="802" alt="image" src="https://user-images.githubusercontent.com/22302890/211977455-fa7a7671-fcca-4b15-ade4-f035a106cb5d.png">
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Code 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Comments: 
 
-## Learn More
+in no particular order
 
-To learn more about Next.js, take a look at the following resources:
+- All is written in typescript 
+- Typings I realise are rough and minimal versions, maybe some duplication could be avoided 
+- Didn't leverage next ssr features, I believe it's ssr by default but I'd have to double check 
+- I didn't connect to an api to generate the candle chart cause I remembered that a while ago I connected to binance and a websocket might be needed, not too fresh in my mind, although I could check it 
+- That definetely could have been got around by using a revalidation time and swr of tanstack query library. Websockets aren't that great. 
+- So the chart data is mostly static 
+- In terms of the elements most are custom versions of flowbits the tailwind components library 
+- tailwind is what I used to style the whole thing, if you spot it closely you start to see patterns emerging, specially related to how the design sort of has the same elements, but it's my visual education pulling harder than anything else 
+- I would probably re write the logic, although I think in general terms it works pretty perfomantly and is aligned with the current state of "the react way of doing stuff" 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployed version 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![gammaswap-assignemnt vercel app_app](https://user-images.githubusercontent.com/22302890/211977718-5a7d4791-8414-4b20-b094-711f3458ad72.png)
+
+
+[mvp-demo](https://gammaswap-assignemnt.vercel.app/app)
+
+
+

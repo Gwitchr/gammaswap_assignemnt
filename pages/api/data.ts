@@ -2,6 +2,8 @@ import type { NextApiResponse, NextApiRequest } from "next";
 
 export const binance = `https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=1m&limit=1000`;
 
+console.log(`${process.env.BIN_KEY !== undefined && process.env.BIN_KEY?.length} ⚠️`);
+
 export const getCryptoData = async () => {
   const string = binance;
   try {
@@ -19,10 +21,7 @@ export const getCryptoData = async () => {
   }
 };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   //const { query } = req;
 
   if (req.method === "GET") {

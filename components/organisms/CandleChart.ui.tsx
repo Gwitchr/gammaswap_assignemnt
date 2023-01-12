@@ -1,9 +1,9 @@
+import { useEffect, useRef } from "react";
 import {
   createChart,
   CrosshairMode,
   CandlestickData,
 } from "lightweight-charts";
-import { useEffect, useRef } from "react";
 
 function ChartComponent({ data }: { data: CandlestickData[] }) {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
@@ -14,7 +14,6 @@ function ChartComponent({ data }: { data: CandlestickData[] }) {
       };
       const { width = 300, height = 200 } =
         chartContainerRef.current.getBoundingClientRect();
-      console.log({ width, height }, ` ⚠️`);
       const chart = createChart(chartContainerRef.current, {
         width,
         height,
@@ -56,7 +55,8 @@ function ChartComponent({ data }: { data: CandlestickData[] }) {
         chart.remove();
       };
     }
-  }, [data]);
+  }, [data, chartContainerRef]);
+
   return <div className="absolute inset-3" ref={chartContainerRef} />;
 }
 

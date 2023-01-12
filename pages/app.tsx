@@ -186,7 +186,7 @@ export default function App() {
                   <p className="">{currencyFormat.format(12.98)}</p>
                 </div>
               </Card>
-              <Card small className="h-72">
+              <Card small className="h-72 relative">
                 <CandleChart data={data} />
               </Card>
             </Col>

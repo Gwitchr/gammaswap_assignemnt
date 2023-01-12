@@ -173,7 +173,7 @@ export default function App() {
               <Card small className="h-72 relative">
                 <CandleChart
                   data={
-                    !error && !isLoading && serverData?.klines.length ? serverData?.klines : data
+                    !error && !isLoading && serverData?.klines?.length ? serverData?.klines : data
                   }
                 />
               </Card>

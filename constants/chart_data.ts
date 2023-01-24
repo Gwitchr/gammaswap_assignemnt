@@ -329,7 +329,7 @@ const initialData = [
     open: 186.69,
     high: 186.69,
     low: 184.06,
-    close: 184.72,
+    close: 184.77,
   },
   {
     time: "2019-02-07",
@@ -343,7 +343,7 @@ const initialData = [
     open: 183.05,
     high: 184.58,
     low: 182.72,
-    close: 184.54,
+    close: 184.14,
   },
   { time: "2019-02-11", open: 185.0, high: 185.42, low: 182.75, close: 182.92 },
   { time: "2019-02-12", open: 183.84, high: 186.4, low: 183.52, close: 185.52 },
